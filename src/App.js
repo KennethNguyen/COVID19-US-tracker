@@ -2,13 +2,31 @@ import React, { useState, useEffect } from "react";
 import styles from "./App.module.css";
 import coronavirusLogo from "./images/covid19-logo.jpg";
 import { DataCards, Chart, StateSelector } from "./components";
-import { fetchUS, fetchDailyUS, fetchStates, fetchStatesDaily } from "./api/index";
+import {
+  fetchUS,
+  fetchDailyUS,
+  fetchStates,
+  fetchStatesDaily,
+} from "./api/index";
 import Footer from "rc-footer";
+import { useQuery } from "react-query";
 
 function App() {
   const [data, setData] = useState({}); // current data of United States or an individual state
   const [dailyData, setDailyData] = useState([]); // array of objects representing each day's data for the United States or individual state
   const [currentState, setCurrentState] = useState("United States"); // the current state selected
+
+  // const { isLoading, error, data } = useQuery("covid", () =>
+  //   fetch(
+  //     "https://intense-sierra-42107.herokuapp.com/https://api.covidtracking.com/v2/us/daily/2021-01-02/simple.json"
+  //   ).then((res) => res.json())
+  // );
+
+  // if (isLoading) return "Loading...";
+
+  // if (error) return "An error has occurred: " + error.message;
+
+  // console.log(data);
 
   // run every time currentState changes; i.e. a different state is selected
   // if the currentState is the United States option, set the data states to be the US data
