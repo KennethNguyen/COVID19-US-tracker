@@ -78,4 +78,4 @@ The coronavirus logo was taken from [York Graphic Designers](https://www.yorkgra
 
 ## Author
 
-Kenneth Nguyen
+Kenneth Nguyen 
